@@ -46,18 +46,7 @@
         displayNext();
       }
     });
-    
-    // Click handler for the 'prev' button
-    $('#prev').on('click', function (e) {
-      e.preventDefault();
-      
-      if(quiz.is(':animated')) {
-        return false;
-      }
-      choose();
-      questionCounter--;
-      displayNext();
-    });
+  
     
     // Click handler for the 'Start Over' button
     $('#start').on('click', function (e) {
@@ -79,6 +68,18 @@
     $('.button').on('mouseleave', function () {
       $(this).removeClass('active');
     });
+
+        // Click handler for the 'prev' button
+        $('#prev').on('click', function (e) {
+          e.preventDefault();
+          
+          if(quiz.is(':animated')) {
+            return false;
+          }
+          choose();
+          questionCounter--;
+          displayNext();
+        });
     
     // Creates and returns the div that contains the questions and 
     // the answer selections
@@ -99,20 +100,7 @@
       return qElement;
     }
     
-    // Creates a list of the answer choices as radio inputs
-    function createRadios(index) {
-      var radioList = $('<ul>');
-      var item;
-      var input = '';
-      for (var i = 0; i < questions[index].choices.length; i++) {
-        item = $('<li>');
-        input = '<input type="radio" name="answer" value=' + i + ' />';
-        input += questions[index].choices[i];
-        item.append(input);
-        radioList.append(item);
-      }
-      return radioList;
-    }
+
     
     // Reads the user selection and pushes the value to an array
     function choose() {
@@ -148,6 +136,21 @@
         }
       });
     }
+
+        // Creates a list of the answer choices as radio inputs
+        function createRadios(index) {
+          var radioList = $('<ul>');
+          var item;
+          var input = '';
+          for (var i = 0; i < questions[index].choices.length; i++) {
+            item = $('<li>');
+            input = '<input type="radio" name="answer" value=' + i + ' />';
+            input += questions[index].choices[i];
+            item.append(input);
+            radioList.append(item);
+          }
+          return radioList;
+        }
     
     // Computes score and returns a paragraph element to be displayed
     function displayScore() {
