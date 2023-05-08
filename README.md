@@ -10,3 +10,11 @@ The JavaScript Quiz App is an engaging web application designed to assess your k
 - Immediate feedback on the accuracy of your answers.
 - Calculation and display of your final score at the end of the quiz.
 - Option to restart the quiz and attempt it again.
+
+### Technologies Utilized
+
+The JavaScript Quiz App is developed using the following technologies:
+
+- HTML
+- CSS
+- JavaScript
