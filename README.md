@@ -38,3 +38,20 @@ To run the JavaScript Quiz App locally for development purposes, please adhere t
 1. Clone the [JavaScript Quiz App repository](https://github.com/juliusgarba/js-quiz-app) to your local machine.
 2. Open the project in your preferred code editor.
 3. Launch the `index.html` file in a web browser.
+
+### Contributing
+
+Contributions to the JavaScript Quiz App are highly appreciated! If you wish to contribute, please follow the guidelines below:
+
+1. Fork the [JavaScript Quiz App repository](https://github.com/juliusgarba/js-quiz-app) on GitHub.
+2. Create a new branch for your contributions.
+3. Implement your changes and ensure descriptive commit messages.
+4. Push your changes to your forked repository.
+5. Submit a pull request, providing a comprehensive description of your modifications.
+
+### License
+
+The JavaScript Quiz App is licensed under the [MIT License](https://github.com/juliusgarba/js-quiz-app/blob/main/LICENSE).
+
+
+---
