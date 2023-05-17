@@ -116,3 +116,29 @@
 
     return radioList;
   }
+
+  /**
+   * Read the user's selection and store it in the selections array.
+   */
+  function choose() {
+    selections[questionCounter] = +$('input[name="answer"]:checked').val();
+  }
+
+  /**
+   * Calculate the score and return a paragraph element to display the final score.
+   * @returns {jQuery} - The score element.
+   */
+  function displayScore() {
+    var score = $('<p>', { id: 'question' });
+
+    var numCorrect = 0;
+    for (var i = 0; i < selections.length; i++) {
+      if (selections[i] === questions[i].correctAnswer) {
+        numCorrect++;
+      }
+    }
+
+    score.append('You got ' + numCorrect + ' questions out of ' +
+      questions.length + ' right!!!');
+    return score;
+  }
