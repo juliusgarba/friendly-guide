@@ -142,3 +142,58 @@
       questions.length + ' right!!!');
     return score;
   }
+
+  /**
+   * Event handler for the 'Next' button click.
+   * Proceeds to the next question or displays an alert if no selection is made.
+   */
+  $('#next').on('click', function(e) {
+    e.preventDefault();
+
+    if (quiz.is(':animated')) {
+      return false;
+    }
+    choose();
+
+    if (isNaN(selections[questionCounter])) {
+      alert('Please make a selection!');
+    } else {
+      questionCounter++;
+      displayNext();
+    }
+  });
+
+  /**
+   * Event handler for the 'Start Over' button click.
+   * Resets the quiz and displays the first question.
+   */
+  $('#start').on('click', function(e) {
+    e.preventDefault();
+
+    if (quiz.is(':animated')) {
+      return false;
+    }
+    questionCounter = 0;
+    selections = [];
+    displayNext();
+    $('#start').hide();
+  });
+
+  /**
+   * Event handler for the 'Previous' button click.
+   * Goes back to the previous question.
+   */
+  $('#prev').on('click', function(e) {
+    e.preventDefault();
+
+    if (quiz.is(':animated')) {
+      return false;
+    }
+    choose();
+    questionCounter--;
+    displayNext();
+  });
+
+  // Initialize the quiz
+  displayNext();
+})();
